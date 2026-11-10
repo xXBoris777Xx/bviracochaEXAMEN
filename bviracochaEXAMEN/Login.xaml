@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bviracochaEXAMEN.Login"
+             Title="Login">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <!-- Logo -->
+            <Image Source="dotnet_bot.png" HeightRequest="100" HorizontalOptions="Center" />
+
+            <!-- Título Rojo, Tamaño 20, Centrado -->
+            <Label Text="INICIO DE SESIÓN"
+                   TextColor="Red"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+            <!-- Grid 2 filas x 2 columnas -->
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, *" RowSpacing="15" ColumnSpacing="10">
+                <Label Text="Usuario:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                <Entry x:Name="txtUsuario" Grid.Row="0" Grid.Column="1" Placeholder="Ingrese usuario" />
+
+                <Label Text="Contraseña:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                <Entry x:Name="txtContrasena" Grid.Row="1" Grid.Column="1" IsPassword="True" Placeholder="Ingrese contraseña" />
+            </Grid>
+
+            <!-- Botón con Estilo Global -->
+            <Button Text="Iniciar sesión"
+                    Style="{StaticResource EstiloBotonGlobal}"
+                    Clicked="OnLoginClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
